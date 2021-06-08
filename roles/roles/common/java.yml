@@ -1,5 +1,0 @@
-- name: Install dependencies
-  apt:
-    name: "{{packages}}"
-    update_cache: yes
-    state: present
