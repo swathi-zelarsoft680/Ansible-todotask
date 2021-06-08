@@ -3,7 +3,7 @@
   become: yes
   ## THis become can also be used at task level
   roles:
-    -  role: frontend
+    - role: frontend
        tags: frontend
        when: COMPONENT == "frontend"
 
