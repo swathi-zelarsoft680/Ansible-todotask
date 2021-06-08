@@ -37,10 +37,10 @@
 
 - name: start nginx
   systemd:
-     name: nginx
-     state: restarted
-     name: nginx
-     enabled: yes
+    name: nginx
+    state: restarted
+    name: nginx
+    enabled: yes
 
 - name: Replace content
   replace:
