@@ -1,0 +1,60 @@
+- name: Install dependencies
+  apt:
+    name: "{{packages}}"
+    update_cache: yes
+    state: present
+
+- name: Install Nginx
+  apt:
+    name: nginx
+    update_cache: yes
+    state: present
+
+- name: start nginx
+  systemd:
+    state: started
+    name: nginx
+    enabled: yes
+           
+- name: Download frontend from nexus
+  get_url:
+    url: http://3.221.150.40:8081/repository/frontend/frontend-0.0.1.zip
+    dest: /root/frontend
+    username: admin
+    password: momdad007
+
+- name: Unzip the download content
+  unarchive:
+    src: /root/frontend
+    dest: /root/
+    remote_src: yes
+
+- name: Replace content
+  replace:
+    path: /etc/nginx/sites-available/default
+    regexp: '/var/www/html'
+    replace: '/root/frontend/dist'    
+
+- name: start nginx
+  systemd:
+     name: nginx
+     state: restarted
+     name: nginx
+     enabled: yes
+
+- name: Replace content
+  replace:
+    path: /root/config/index.js
+    regexp: '127.0.0.1'
+    replace: 'login.swathi.host'
+
+- name: Replace content
+  replace:
+    path: /root/config/index.js
+    regexp: '127.0.0.2'
+    replace: 'todo.swathi.host'
+
+- name: To start npm
+  shell: npm start
+  args:
+    chdir: /root/
