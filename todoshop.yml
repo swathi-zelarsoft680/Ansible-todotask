@@ -7,9 +7,9 @@
       tags: frontend
       when: COMPONENT == "frontend"
 
-   # - role: login
-   #  tags: login
-  #  when: COMPONENT == "login"
+    - role: login
+      tags: login
+      when: COMPONENT == "login"
 
    # - role: users
     #  tags: users
