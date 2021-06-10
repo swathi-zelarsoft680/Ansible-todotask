@@ -4,7 +4,7 @@
     update_cache: yes
     state: present
 
-- name: Download frontend from Nexus
+- name: Download users from Nexus
   get_url:
     url: http://172.31.86.76:8081/repository/users/users-0.0.1.zip
     dest: /root/users
