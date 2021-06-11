@@ -7,7 +7,7 @@
 - name: Download users from Nexus
   get_url:
     url: http://172.31.86.76:8081/repository/users/users-0.0.1.zip
-    dest: /root/users
+    dest: /root/users.zip
     username: admin
     password: momdad007
 
