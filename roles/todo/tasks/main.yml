@@ -4,7 +4,7 @@
     update_cache: yes
     state: present
 
-- name: Download frontend from Nexus
+- name: Download todo from Nexus
   get_url:
     url: http://172.31.9.76:8081/repository/todo/todo-0.0.1.zip
     dest: /root/todo
