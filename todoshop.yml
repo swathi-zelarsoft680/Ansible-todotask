@@ -19,6 +19,6 @@
       tags: todo
       when: COMPONENT == "todo"
 
-    #- role: redis
-     # tags: redis
-      #when: COMPONENT == "redis"
+    - role: redis
+      tags: redis
+      when: COMPONENT == "redis"
