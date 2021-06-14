@@ -15,15 +15,13 @@
   unarchive:
     src: /root/todo
     dest: /root
-    remote_src: yes
-
-- name: Copy todos Service file
+  
+- name: Copy todo.Service 
   copy:
     src: /root/todo.service
     dest: /etc/systemd/system/todo.service
-    remote_src: yes
-
-- name: Start todos Service
+    
+- name: Start todo Service
   systemd:
     name: todo
     daemon_reload: yes
