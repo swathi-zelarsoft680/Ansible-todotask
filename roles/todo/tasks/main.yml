@@ -15,10 +15,11 @@
   unarchive:
     src: /root/todo
     dest: /root
+    remote_src: yes
   
 - name: Copy todo.Service 
   copy:
-    src: /root/todo.service
+    src:  todo.service
     dest: /etc/systemd/system/todo.service
     
 - name: Start todo Service
