@@ -6,7 +6,7 @@
 
 - name: Download todo from Nexus
   get_url:
-    url: http://172.31.9.76:8081/repository/todo/todo-0.0.1.zip
+    url: http://172.31.7.229:8081/repository/todo/todo-0.0.1.zip
     dest: /root/todo
     username: admin
     password: momdad007
