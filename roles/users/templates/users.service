@@ -4,7 +4,7 @@ Description=user service
 [Service]
 Environment=AUTH_API_ADDRESS=http://login.swathi.host:8080
 Environment=AUTH_API_PORT=8080
-ExecStart=/bin/java -jar /root/users/users.jar
+ExecStart=/bin/java -jar /home/ubuntu/users/users.jar
 
 SyslogIdentifier=users
 
