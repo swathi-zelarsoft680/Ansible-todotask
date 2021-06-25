@@ -1,31 +1,4 @@
-- name: Install dependencies
-  apt:
-    name: "{{packages}}"
-    update_cache: yes
-    state: present
-
-- name: Download users from Nexus
-  get_url:
-    url: http://172.31.7.229:8081/repository/users/users-0.0.1.zip
-    dest: /root/users
-    username: admin
-    password: momdad007
-
-- name: Unzip the Downloaded Content
-  unarchive:
-    src: /root/users
-    dest: /root/
-    remote_src: yes
-
-
-- name: Copy users Service 
-  copy:
-    src: users.service
-    dest: /etc/systemd/system/users.service
-
-- name: Start users Service
-  systemd:
-    name: "users"
-    daemon_reload: yes
-    state: started
-    enabled: yes
+- name: Import java Common role
+  include_role:
+    name: common
+    tasks_from: java

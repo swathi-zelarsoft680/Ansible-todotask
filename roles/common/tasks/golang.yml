@@ -1,6 +1,6 @@
-- name: Install NPM
+- name: Install Golang
   apt:
-    name: npm
+    name: golang
     state: present
     update_cache: yes
 

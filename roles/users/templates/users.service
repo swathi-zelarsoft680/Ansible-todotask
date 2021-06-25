@@ -1,0 +1,12 @@
+[Unit]
+Description=user service
+
+[Service]
+Environment=AUTH_API_ADDRESS=http://login.swathi.host:8080
+Environment=AUTH_API_PORT=8080
+ExecStart=/bin/java -jar /root/users.jar
+
+SyslogIdentifier=users
+
+[Install]
+WantedBy=multi-user.target
