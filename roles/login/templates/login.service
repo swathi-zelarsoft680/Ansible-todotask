@@ -4,7 +4,7 @@ Description = login Service
 [Service]
 Environment=AUTH_API_PORT=8080
 Environment=USERS_API_ADDRESS=http://users-{{ENV}}.swathizs.ml:8080
-ExecStart=/home/ubuntu/login/login-ci
+ExecStart=/home/ubuntu/login/login-ci@2
 SyslogIdentifier=login
  
 
